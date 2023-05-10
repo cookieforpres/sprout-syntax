@@ -1,0 +1,31 @@
+{
+  "name": "sprout",
+  "displayName": "Sprout",
+  "description": "sprout programming language",
+  "version": "0.0.2",
+  "publisher": "cookieforpres",
+  "icon": "https://raw.githubusercontent.com/cookieforpres/sprout-syntax/main/icons/sprout.png",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "spr",
+      "aliases": ["Sprout", "spr"],
+      "extensions": [".spr", ".sprout"],
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "light": "./icons/sprout.png",
+        "dark": "./icons/sprout.png"
+      }
+    }],
+    "grammars": [{
+      "language": "spr",
+      "scopeName": "source.spr",
+      "path": "./syntaxes/spr.tmLanguage.json"
+    }]
+  }
+}
