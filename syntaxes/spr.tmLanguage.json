@@ -179,6 +179,20 @@
 			]
 		},
 		{
+			"begin": "\\b(const)\\s+",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.const.spr"
+				}
+			},
+			"end": "(?!\\G)",
+			"patterns": [
+				{
+					"include": "#constants"
+				}
+			]
+		},
+		{
 			"match": "(?<!var)\\s*(\\w+(?:\\.\\w+)*(?>,\\s*\\w+(?:\\.\\w+)*)*)(?=\\s*=(?!=))",
 			"captures": {
 				"1": {
