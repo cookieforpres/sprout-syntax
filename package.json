@@ -2,7 +2,7 @@
   "name": "sprout",
   "displayName": "Sprout",
   "description": "sprout programming language",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "cookieforpres",
   "icon": "https://raw.githubusercontent.com/cookieforpres/sprout-syntax/main/icons/sprout.png",
   "engines": {
