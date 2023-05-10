@@ -417,8 +417,8 @@
 					"name": "keyword.struct.spr"
 				},
 				{
-					"match": "\\bmodule\\b",
-					"name": "keyword.module.spr"
+					"match": "\\bclass\\b",
+					"name": "keyword.class.spr"
 				}
 			]
 		},

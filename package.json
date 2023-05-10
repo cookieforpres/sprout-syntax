@@ -4,7 +4,11 @@
   "description": "sprout programming language",
   "version": "0.0.3",
   "publisher": "cookieforpres",
-  "icon": "https://raw.githubusercontent.com/cookieforpres/sprout-syntax/main/icons/sprout.png",
+  "icon": "icons/sprout.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cookieforpres/sprout-syntax.git"
+  },
   "engines": {
     "vscode": "^1.77.0"
   },
