@@ -416,7 +416,7 @@
 			"patterns": [
 				{
 					"comment": "flow control keywords",
-					"match": "\\b(break|case|continue|default|else|for|sprout|if|range|return|switch|try|catch|finally|in)\\b",
+					"match": "\\b(break|case|continue|default|else|for|while|sprout|if|range|return|switch|try|catch|finally|in|or|and|not)\\b",
 					"name": "keyword.control.spr"
 				},
 				{
