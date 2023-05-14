@@ -87,7 +87,7 @@
 		},
 		{
 			"comment": "built-in functions",
-			"match": "\\b(keys|range|typeof|kindof|defined|include|print|println|printf|sprintf|errorf|panic|to_bool|to_string|to_json|to_int|to_float|to_char|to_rune|to_bool_slice|to_string_slice|to_int_slice|to_float_slice|to_byte_slice|to_rune_slice|to_duration|map_has_key|map_has_value|slice_has_value)\\b(?=\\()",
+			"match": "\\b(range|typeof||print|println|printf|sprintf|len|int|float|str|bytes|open|exit|input)\\b(?=\\()",
 			"name": "support.function.builtin.spr"
 		},
 		{
@@ -468,35 +468,6 @@
 				{
 					"match": "\\.\\.\\.",
 					"name": "keyword.operator.ellipsis.spr"
-				}
-			]
-		},
-		"runes": {
-			"patterns": [
-				{
-					"begin": "'",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.definition.string.begin.spr"
-						}
-					},
-					"end": "'",
-					"endCaptures": {
-						"0": {
-							"name": "punctuation.definition.string.end.spr"
-						}
-					},
-					"name": "string.quoted.rune.spr",
-					"patterns": [
-						{
-							"match": "\\G(\\\\([0-7]{3}|[abfnrtv\\\\'\"]|x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8})|.)(?=')",
-							"name": "constant.other.rune.spr"
-						},
-						{
-							"match": "[^']+",
-							"name": "invalid.illegal.unknown-rune.spr"
-						}
-					]
 				}
 			]
 		},
