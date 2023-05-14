@@ -87,7 +87,7 @@
 		},
 		{
 			"comment": "built-in functions",
-			"match": "\\b(range|typeof||print|println|printf|sprintf|len|int|float|str|bytes|open|exit|input)\\b(?=\\()",
+			"match": "\\b(len|int|float|str|bytes|typeof|open|exit|print|printf|println|sprintf|input)\\b(?=\\()",
 			"name": "support.function.builtin.spr"
 		},
 		{
@@ -163,49 +163,6 @@
 					"include": "#imports"
 				}
 			]
-		},
-		{
-			"begin": "\\b(let)\\s+",
-			"beginCaptures": {
-				"1": {
-					"name": "keyword.var.spr"
-				}
-			},
-			"end": "(?!\\G)",
-			"patterns": [
-				{
-					"include": "#variables"
-				}
-			]
-		},
-		{
-			"match": "(?<!let)\\s*(\\w+(?:\\.\\w+)*(?>,\\s*\\w+(?:\\.\\w+)*)*)(?=\\s*=(?!=))",
-			"captures": {
-				"1": {
-					"patterns": [
-						{
-							"match": "\\d\\w*",
-							"name": "invalid.illegal.identifier.spr"
-						},
-						{
-							"match": "\\w+(?:\\.\\w+)*",
-							"name": "variable.other.assignment.spr",
-							"captures": {
-								"0": {
-									"patterns": [
-										{
-											"include": "#delimiters"
-										}
-									]
-								}
-							}
-						},
-						{
-							"include": "#delimiters"
-						}
-					]
-				}
-			}
 		},
 		{
 			"match": "\\b\\w+(?:,\\s*\\w+)*(?=\\s*:=)",
@@ -393,12 +350,16 @@
 			"patterns": [
 				{
 					"comment": "flow control keywords",
-					"match": "\\b(break|case|continue|default|else|for|while|sprout|if|range|return|switch|try|catch|finally|in|or|and|not)\\b",
+					"match": "\\b(break|case|continue|default|defer|else|for|while|sprout|if|range|return|switch)\\b",
 					"name": "keyword.control.spr"
 				},
 				{
 					"match": "\\bchan\\b",
 					"name": "keyword.channel.spr"
+				},
+				{
+					"match": "\\bconst\\b",
+					"name": "keyword.const.spr"
 				},
 				{
 					"match": "\\bfunc\\b",
@@ -415,14 +376,6 @@
 				{
 					"match": "\\bstruct\\b",
 					"name": "keyword.struct.spr"
-				},
-				{
-					"match": "\\bclass\\b",
-					"name": "keyword.class.spr"
-				},
-				{
-					"match": "\\bconst\\b",
-					"name": "keyword.const.go"
 				}
 			]
 		},
@@ -468,6 +421,35 @@
 				{
 					"match": "\\.\\.\\.",
 					"name": "keyword.operator.ellipsis.spr"
+				}
+			]
+		},
+		"runes": {
+			"patterns": [
+				{
+					"begin": "'",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.spr"
+						}
+					},
+					"end": "'",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.spr"
+						}
+					},
+					"name": "string.quoted.rune.spr",
+					"patterns": [
+						{
+							"match": "\\G(\\\\([0-7]{3}|[abfnrtv\\\\'\"]|x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8})|.)(?=')",
+							"name": "constant.other.rune.spr"
+						},
+						{
+							"match": "[^']+",
+							"name": "invalid.illegal.unknown-rune.spr"
+						}
+					]
 				}
 			]
 		},
