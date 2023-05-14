@@ -2,7 +2,7 @@
   "name": "sprout",
   "displayName": "Sprout",
   "description": "sprout programming language",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "publisher": "cookieforpres",
   "icon": "icons/sprout.png",
   "repository": {
@@ -13,7 +13,9 @@
     "vscode": "^1.77.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Visualization",
+    "Linters"
   ],
   "contributes": {
     "languages": [{
