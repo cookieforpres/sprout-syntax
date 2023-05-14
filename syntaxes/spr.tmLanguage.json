@@ -10,25 +10,52 @@
 		},
 		{
 			"comment": "interpreted string literals",
-			"begin": "\"",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.definition.string.begin.spr"
-				}
-			},
-			"end": "\"",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.definition.string.end.spr"
-				}
-			},
-			"name": "string.quoted.double.spr",
 			"patterns": [
 				{
-					"include": "#string_escaped_char"
+					"begin": "\"",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.spr"
+						}
+					},
+					"end": "\"",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.spr"
+						}
+					},
+					"name": "string.quoted.double.spr",
+					"patterns": [
+						{
+							"include": "#string_escaped_char"
+						},
+						{
+							"include": "#string_placeholder"
+						}
+					]
 				},
 				{
-					"include": "#string_placeholder"
+					"begin": "'",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.spr"
+						}
+					},
+					"end": "'",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.spr"
+						}
+					},
+					"name": "string.quoted.single.spr",
+					"patterns": [
+						{
+							"include": "#string_escaped_char"
+						},
+						{
+							"include": "#string_placeholder"
+						}
+					]
 				}
 			]
 		},
