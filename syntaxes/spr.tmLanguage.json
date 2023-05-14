@@ -374,8 +374,8 @@
 					"name": "keyword.map.spr"
 				},
 				{
-					"match": "\\bstruct\\b",
-					"name": "keyword.struct.spr"
+					"match": "\\bclass\\b",
+					"name": "keyword.class.spr"
 				}
 			]
 		},
